@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ti:app xmlns:ti="http://ti.appcelerator.org">
+    <property name="acs-oauth-secret-production" type="string">38KNiMaKKpsKovr69np9TTsmf2Yt8EUf</property>
+    <property name="acs-oauth-key-production" type="string">CI94nSWxAkERUQWT4bVFtoXiO2AT6uW7</property>
+    <property name="acs-api-key-production" type="string">yN292ia7e78yiHlvvgU4io09jYWoUOOn</property>
+    <property name="acs-oauth-secret-development" type="string">ofIFMTS1F2zHL5XzNg00OH7JJ6noy8dQ</property>
+    <property name="acs-oauth-key-development" type="string">AYQucZimqgv8Q9HorPsq22f3kLFwZ0xO</property>
+    <property name="acs-api-key-development" type="string">OvnYxm0DUPK0FhpQA9Ygs1XvJX6Iecr7</property>
     <id>it.wechanged.wallie.app</id>
     <name>wallie</name>
     <version>1.0</version>
-    <publisher>not specified</publisher>
+    <publisher>WeChangedIt</publisher>
     <url>http://wechanged.it</url>
     <description>not specified</description>
-    <copyright>not specified</copyright>
+    <copyright>2013 WeChangedIt</copyright>
     <icon>appicon.png</icon>
     <persistent-wifi>false</persistent-wifi>
     <prerendered-icon>false</prerendered-icon>
