@@ -103,61 +103,80 @@ function share(req, res) {
 
 function __list(req, res, callback) {
 	__checkLogin(req, res, function(user) {
-    	if (user.custom_fields && user.custom_fields.code) {
-    		var baseURL = StickyStreet.base_url;
+		// get the retailers photos
+		var retailers_photos = {};
+		ACS.Objects.query({
+			classname: 'retailer'
+		}, function(data) {
+			console.log(JSON.stringify(data));
+			if (data.success && data.retailer) {
+				for(var rr in data.retailer) {
+					var retailer = data.retailer[rr];
+					if (retailer.photo) {
+						retailers_photos[retailer.code] = retailer.photo.urls.small_240;
+					}
+				}
+			}
 
-    		var params = {
-    			user_id: StickyStreet.user_id,
-    			user_password: StickyStreet.user_password,
-    			account_id: StickyStreet.account_id,
-    			type: "customer_info",
-    			code: user.custom_fields.code
-    		};
+			if (user.custom_fields && user.custom_fields.code) {
+				var baseURL = StickyStreet.base_url;
 
-    		var query = "";
-    		for (var p in params) {
-    		    query += "&" + p + "=" + params[p];
-    		}
+				var params = {
+					user_id: StickyStreet.user_id,
+					user_password: StickyStreet.user_password,
+					account_id: StickyStreet.account_id,
+					type: "customer_info",
+					code: user.custom_fields.code
+				};
 
-    		var xhr = new XMLHttpRequest();
-    	    xhr.onreadystatechange = function() {
-    			if (this.readyState == 4) {
-    				try {
-    					var result = JSON.parse(this.responseText);
-    					if (result && result.status == "success") {
-    						var coupons = [];
-    						// get all the campaigns
-    						var campaigns = result.campaigns;
-    						if (campaigns && campaigns.length > 0) {
-    							for (var cc in campaigns) {
-    								for (var ii in campaigns[cc].items) {
-    									var fullItem = campaigns[cc].items[ii];
+				var query = "";
+				for (var p in params) {
+				    query += "&" + p + "=" + params[p];
+				}
 
-    									var item = {
-    										name: fullItem.name,
-    										coupon_id: fullItem.item_id,
-    										code: fullItem.reward_id,
-    										campaign_id: campaigns[cc].id
-    									}
+				var xhr = new XMLHttpRequest();
+			    xhr.onreadystatechange = function() {
+					if (this.readyState == 4) {
+						try {
+							var result = JSON.parse(this.responseText);
+							if (result && result.status == "success") {
+								var coupons = [];
+								// get all the campaigns
+								var campaigns = result.campaigns;
+								if (campaigns && campaigns.length > 0) {
+									for (var cc in campaigns) {
+										for (var ii in campaigns[cc].items) {
+											var fullItem = campaigns[cc].items[ii];
 
-    									coupons.push(item);
-    								}
-    							}
-    						}
+											var retailer_code = fullItem.reward_id.substring(0, 3);
 
-    						callback(req, res, coupons);
-    					}
-    				} catch(e) {
-    					callback(req, res, null);
-    				}
-    	        }
-    	    };
+											var item = {
+												name: fullItem.name,
+												coupon_id: fullItem.item_id,
+												code: fullItem.reward_id,
+												campaign_id: campaigns[cc].id,
+												photo: retailers_photos[retailer_code] || ""
+											}
 
-    	    xhr.open('GET', baseURL + query);
-    	    xhr.send();
-    	} else {
-    		callback(req, res, null);
-    	}
+											coupons.push(item);
+										}
+									}
+								}
+
+								callback(req, res, coupons);
+							}
+						} catch(e) {
+							callback(req, res, null);
+						}
+			        }
+			    };
+
+			    xhr.open('GET', baseURL + query);
+			    xhr.send();
+			} else {
+				callback(req, res, null);
+			}
+		}, req, res);
     });
 }
 
