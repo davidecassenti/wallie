@@ -1,7 +1,13 @@
 {
   "routes":
   [
-    { "path": "/", "callback": "application#index" }
+    { "path": "/", "callback": "application#index" },
+
+    { "path": "/login", "callback": "user#login", "method": "post" },
+    { "path": "/signup", "callback": "user#signup", "method": "post" },
+    { "path": "/logout", "callback": "user#logout" },
+
+    { "path": "/coupons", "callback": "coupons#list" }
   ],
   "filters":
   [
@@ -10,5 +16,13 @@
   "websockets":
   [
   	{ "event": "", "callback": ""}
-  ]
+  ],
+    "acs": {
+      "key": "",
+      "secret": ""
+  },
+    "stickystreet": {
+      "user_id": "",
+      "user_password": ""
+  }
 }
