@@ -1,0 +1,27 @@
+<Alloy>
+	<view>
+		<Label id="couponTitle" text="Come behind the bar and craft your own coffee" />
+		<Label id="title" text="Choose a friend" />
+        <ListView id="friendsList" defaultItemTemplate="template">
+
+            <!-- The Templates tag sets the ListView's templates property -->
+            <Templates>
+                <!-- Define your item templates within the Templates tags or use the
+                     Require tag to include a view that only contains an ItemTemplate -->
+                <ItemTemplate name="template">
+                    <ImageView bindId="pic" id="userPhoto" />
+                    <Label bindId="info" id="friendName" />
+                </ItemTemplate>
+            </Templates>
+
+            <ListSection headerTitle="friendsList">
+                <!-- You can specify any ListItem or ListDataItem properties in ListItem -->
+                <!-- Specify data to bind to the item template with inline attributes
+                     defined as <bindId>:<Ti.UI.Component.property> -->
+                <ListItem info:text="Mzia Kupunia" whitepic:image="/images/mziaKupunia.png" />
+                <ListItem info:text="Betty Tran" pic:image="/images/bettyTran.png" />
+                <ListItem info:text="Morena Fiore" pic:image="/images/morenaFiore.png" />
+            </ListSection>
+        </ListView>
+	</view>
+</Alloy>

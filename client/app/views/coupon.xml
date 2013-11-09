@@ -1,0 +1,22 @@
+<Alloy>
+	<view>
+		<ImageView id="companyLogo" image="/images/logos/hh-logo.png" />
+		<Label id="couponTitle" text="Come behind the bar and craft your own coffee" />
+		<Button id="shareButton" onClick="doClick" title="Send to a friend"
+            top="10" width="100" height="50" />
+		<ImageView id="couponImage" image="/images/coupon.png" />
+		<Label id="couponCode" text="34574389" />
+		<ImageView id="barcode" image="http://chart.apis.google.com/chart?cht=qr&chs=100x100&chld=H|0&chl=34574389" />
+		<Label id="couponDesc">
+			Ever wanted to jump behind the bar and craft your own coffee? Creamy, Iced, Frothy... Come to Harris + Hoole and we'll let you. We will give you a quick tour of the coffee machine we use and will teach you how to create your favourite beverage.
+		</Label>
+		<Label id="addressTitle" text="Address" />
+		<Label id="address">
+			9 The Broadway,<br /> 
+			Crouch End<br />
+			N8 8DU
+		</Label>
+		<Button id="mapButton" onClick="doClick" title="Map"
+            width="100" height="50" />
+	</view>
+</Alloy>
