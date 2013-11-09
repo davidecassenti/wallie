@@ -17,7 +17,7 @@
                 <!-- You can specify any ListItem or ListDataItem properties in ListItem -->
                 <!-- Specify data to bind to the item template with inline attributes
                      defined as <bindId>:<Ti.UI.Component.property> -->
-                <ListItem info:text="Harris + Hoole" es_info:text="Free Flat white on us!" whitepic:image="/images/hh-logo.png" />
+                <ListItem info:text="Harris + Hoole" es_info:text="Free Flat White on us!" whitepic:image="/images/hh-logo.png" />
                 <ListItem info:text="Harris + Hoole" es_info:text="Play your favourite song in the store while you sip your coffee" pic:image="/images/hh-logo.png" />
                 <ListItem info:text="Harris + Hoole" es_info:text="Come behind the bar and craft your own coffee" pic:image="/images/hh-logo.png" />
                 <ListItem info:text="Harris + Hoole" es_info:text="Free bag of our special Xmas blend" pic:image="/images/hh-logo.png" />
