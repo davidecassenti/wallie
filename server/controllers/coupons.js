@@ -131,8 +131,15 @@ function __list(req, res, callback) {
     						if (campaigns && campaigns.length > 0) {
     							for (var cc in campaigns) {
     								for (var ii in campaigns[cc].items) {
-    									var item = campaigns[cc].items[ii];
-    									item.campaign_id = campaigns[cc].id;
+    									var fullItem = campaigns[cc].items[ii];
+
+    									var item = {
+    										name: fullItem.name,
+    										coupon_id: fullItem.item_id,
+    										code: fullItem.reward_id,
+    										campaign_id: campaigns[cc].id
+    									}
+
     									coupons.push(item);
     								}
     							}
