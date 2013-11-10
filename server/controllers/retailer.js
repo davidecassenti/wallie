@@ -4,6 +4,10 @@ function index(req, res) {
 	res.render('retailer', { title: 'Retailer Space' });
 }
 
+function viewAll(req,res){
+
+}
+
 function submit(req,res){
 	var body = req.body;
 
@@ -19,7 +23,7 @@ function submit(req,res){
 			}));
 	}else{
 		//make the call
-		var baseURL = "http://localhost:8080/coupon/add";
+		var baseURL = "http://wallie.wechanged.it/coupon/add";
 		
 		var xhr = new XMLHttpRequest();
 		xhr.onreadystatechange = function() {
