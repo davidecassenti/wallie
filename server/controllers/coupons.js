@@ -1,31 +1,5 @@
-var ACS = require('acs').ACS;
-var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
-
-var CONFIG = require('nconf');
-
-CONFIG.use('file', {
-	file: __dirname + '/../config.json'
-});
-CONFIG.load();
-
-ACS.init(CONFIG.get("acs:key"), CONFIG.get("acs:secret"));
-
-var StickyStreet = CONFIG.get("stickystreet");
-
-function __checkLogin(req, res, callback) {
-	ACS.Users.showMe(function(data) {
-        if (data.success) {
-        	var user = data.users && data.users[0];
-
-        	callback(user);
-        } else {
-        	res.writeHead(401, {
-        	    'Content-Type' : 'application/json'
-        	});
-        	res.end("{message: 'You better login, dude!'}");
-        }
-	}, req, res);
-}
+var StickyStreet = require('/stickystreet');
+var Wallie = require('/wallie');
 
 function list(req, res) {
 	console.log('coupons#list called');
@@ -61,10 +35,7 @@ function share(req, res) {
 					if (coupons[cc].item_id == coupon_id) {
 						var item = coupons[cc];
 
-						__buildStickyStreetCall(req, res, {
-							user_id: StickyStreet.user_id,
-							user_password: StickyStreet.user_password,
-							account_id: StickyStreet.account_id,
+						StickyStreet.call(req, res, {
 							type: "campaign_delete",
 							action: "item",
 							campaign_id: item.campaign_id,
@@ -102,81 +73,43 @@ function share(req, res) {
 }
 
 function __list(req, res, callback) {
-	__checkLogin(req, res, function(user) {
-		// get the retailers photos
-		var retailers_photos = {};
-		ACS.Objects.query({
-			classname: 'retailer'
-		}, function(data) {
-			console.log(JSON.stringify(data));
-			if (data.success && data.retailer) {
-				for(var rr in data.retailer) {
-					var retailer = data.retailer[rr];
-					if (retailer.photo) {
-						retailers_photos[retailer.code] = retailer.photo.urls.small_240;
-					}
-				}
-			}
-
+	Wallie.checkLogin(req, res, function(user) {
+		// get the retailers info
+		Wallie.getRetailers (req, res, function (req, res, retailers) {
 			if (user.custom_fields && user.custom_fields.code) {
-				var baseURL = StickyStreet.base_url;
-
-				var params = {
-					user_id: StickyStreet.user_id,
-					user_password: StickyStreet.user_password,
-					account_id: StickyStreet.account_id,
+				StickyStreet.call(req, res, {
 					type: "customer_info",
 					code: user.custom_fields.code
-				};
+				}, function(req, res, result) {
+					var coupons = [];
+					// get all the campaigns
+					var campaigns = result.campaigns;
+					if (campaigns && campaigns.length > 0) {
+						for (var cc in campaigns) {
+							for (var ii in campaigns[cc].items) {
+								var fullItem = campaigns[cc].items[ii];
 
-				var query = "";
-				for (var p in params) {
-				    query += "&" + p + "=" + params[p];
-				}
+								var retailer_code = fullItem.reward_id.substring(0, 3);
 
-				var xhr = new XMLHttpRequest();
-			    xhr.onreadystatechange = function() {
-					if (this.readyState == 4) {
-						try {
-							var result = JSON.parse(this.responseText);
-							if (result && result.status == "success") {
-								var coupons = [];
-								// get all the campaigns
-								var campaigns = result.campaigns;
-								if (campaigns && campaigns.length > 0) {
-									for (var cc in campaigns) {
-										for (var ii in campaigns[cc].items) {
-											var fullItem = campaigns[cc].items[ii];
-
-											var retailer_code = fullItem.reward_id.substring(0, 3);
-
-											var item = {
-												name: fullItem.name,
-												coupon_id: fullItem.item_id,
-												code: fullItem.reward_id,
-												campaign_id: campaigns[cc].id,
-												photo: retailers_photos[retailer_code] || ""
-											}
-
-											coupons.push(item);
-										}
-									}
+								var item = {
+									name: fullItem.name,
+									coupon_id: fullItem.item_id,
+									code: fullItem.reward_id,
+									campaign_id: campaigns[cc].id,
+									retailer: retailers[retailer_code] || {}
 								}
 
-								callback(req, res, coupons);
+								coupons.push(item);
 							}
-						} catch(e) {
-							callback(req, res, null);
 						}
-			        }
-			    };
+					}
 
-			    xhr.open('GET', baseURL + query);
-			    xhr.send();
+					callback(req, res, coupons);
+				});
 			} else {
 				callback(req, res, null);
 			}
-		}, req, res);
+		});
     });
 }
 
@@ -195,10 +128,7 @@ function add(req, res) {
 }
 
 function __add(req, res, campaign_id, item, callback) {
-	__buildStickyStreetCall(req, res, {
-		user_id: StickyStreet.user_id,
-		user_password: StickyStreet.user_password,
-		account_id: StickyStreet.account_id,
+	StickyStreet.call(req, res, {
 		type: "campaign_new",
 		action: "item",
 		reward_level: 1,
@@ -208,34 +138,4 @@ function __add(req, res, campaign_id, item, callback) {
 	}, function(req, res, result) {
 		callback(req, res, result);
 	});
-}
-
-function __buildStickyStreetCall(req, res, params, callback) {
-	// create the StickyStreet user
-	var baseURL = StickyStreet.base_url;
-			
-	var query = "";
-	for (var p in params) {
-	    query += "&" + p + "=" + params[p];
-	}
-
-	var xhr = new XMLHttpRequest();
-	xhr.onreadystatechange = function() {
-		if (this.readyState == 4) {
-			var result = JSON.parse(this.responseText);
-			if (result && result.status == "success") {
-				callback(req, res, result);
-			} else {
-				res.writeHead(400, {
-					"Content-Type": "application/json"
-				});
-				res.end(JSON.stringify({
-					"message": "Something went wrong..."
-				}));
-			}
-		}
-	}
-
-    xhr.open('GET', baseURL + query);
-    xhr.send();
 }
