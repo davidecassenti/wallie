@@ -32,7 +32,7 @@
 "#subtitle": {
 	left: 0,
 	color: "#594a43",
-	font: {fontSize: 14}
+	font: {fontSize: 12}
 },
 "#textContainer": {
 	layout: "vertical",

@@ -32,13 +32,13 @@
 	top:70
 },
 "#companyLogo":{
-	left: 5,
-	top: 10,
-	bottom: 10
+	left: 10,
+	top: 15,
+	bottom: 15
 },
 "#companyTitle":{
 	left: 60,
-	top: 17,
+	top: 13,
 	width: 120,
 	color: "#fff",
 	font: {fontSize: 12}
