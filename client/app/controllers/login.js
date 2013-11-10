@@ -1,6 +1,6 @@
 
 var loginCallback = function(e) {
-    var list = Alloy.createController('couponList', {}).getView();
+    var list = Alloy.createController('couponList', {title: "My Wallie"}).getView();
     Alloy.Globals.nav = list;
 	$.login.close();
 };

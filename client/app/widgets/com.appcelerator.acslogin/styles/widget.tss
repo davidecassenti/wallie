@@ -65,7 +65,9 @@
 	width: "80%"
 },
 "#usernameTxt": {
-	hintText: "Username"
+	hintText: "Username",
+	autocapitalization: false,
+	autocorrect: false
 },
 "#passwordTxt": {
 	hintText: "Password",

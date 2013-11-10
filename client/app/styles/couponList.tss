@@ -19,7 +19,9 @@
 "#companyLogo":{
 	left: 10,
 	top: 5,
-	bottom: 5
+	bottom: 5,
+	width: 40,
+	height: 40
 },
 "#companyTitle":{
 	left: 0,
@@ -30,7 +32,7 @@
 "#subtitle": {
 	left: 0,
 	color: "#594a43",
-	font: {fontSize: 14}
+	font: {fontSize: 12}
 },
 "#textContainer": {
 	layout: "vertical",
