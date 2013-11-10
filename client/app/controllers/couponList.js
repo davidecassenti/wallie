@@ -1,5 +1,6 @@
 
-
+var args = arguments[0] || {};
+$.couponList.title = args.title;
 //Scrollable view for offers
 var scrollItems = [];
 for(var j=0; j<5; j++){
