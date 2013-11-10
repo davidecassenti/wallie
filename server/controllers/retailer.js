@@ -30,7 +30,7 @@ function submit(req,res){
 				res.render('couponAdded', { 
 					couponName: couponName,
 					couponCode: couponCode,
-					title: 'Adding your Coupon...'
+					title: 'Retailer Space - Adding your Coupon...'
 				});
 				res.end();
 			}
