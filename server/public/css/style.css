@@ -1,4 +1,41 @@
 body {
   /*font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;*/
-  padding: 60px;
+}
+
+.navbar-default .navbar-brand{
+	background:url("../images/logo.png") no-repeat 0 0;
+	text-direction:ltr;
+	left:9999999em;
+	font-size:0;
+	line-height:0;
+	width:200px;
+	height:133px;
+}
+.navbar-nav{
+	position:absolute;
+	bottom:0.5em; 
+	right:1em;
+}
+.navbar .container{
+	position:relative;
+}
+.navbar-default.green{
+	background:#009346;
+}
+.navbar-default .navbar-nav>li>a{
+	color:#dfe0bf;
+	font-size:2em;
+	text-shadow:1px 1px #000;
+}
+.navbar-default .navbar-nav>li>a:hover, 
+.navbar-default .navbar-nav>li>a:focus {
+	color:#bfe0c7;
+}
+
+h1{
+	margin:1em 0;
+}
+
+form.col-md-6{
+	padding:0;
 }

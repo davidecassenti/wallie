@@ -7,7 +7,10 @@
     { "path": "/signup", "callback": "user#signup", "method": "post" },
     { "path": "/logout", "callback": "user#logout" },
 
-    { "path": "/coupons", "callback": "coupons#list" }
+    { "path": "/coupons", "callback": "coupons#list" },
+
+    { "path": "/retailer", "callback": "retailer#index" },
+    { "path": "/submit", "callback": "retailer#submit", "method": "post" }
   ],
   "filters":
   [
