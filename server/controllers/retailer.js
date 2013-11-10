@@ -4,27 +4,6 @@ function index(req, res) {
 	res.render('retailer', { title: 'Retailer Space' });
 }
 
-function viewCoupons(req,res){
-	//make the call to get all coupons
-	var baseURL = "http://wallie.wechanged.it/coupons";
-		
-	var xhr = new XMLHttpRequest();
-	xhr.onreadystatechange = function() {
-		console.log(this.responseText);
-		if (this.readyState == 4) {
-			var result = JSON.parse(this.responseText);
-			console.log(result);
-			
-			res.render('coupons', { 
-				couponName: couponName,
-				couponCode: couponCode,
-				title: 'Adding your Coupon...'
-			});
-			res.end();
-		}
-	}
-}
-
 function submit(req,res){
 	var body = req.body;
 
@@ -44,7 +23,6 @@ function submit(req,res){
 		
 		var xhr = new XMLHttpRequest();
 		xhr.onreadystatechange = function() {
-			console.log(this.responseText);
 			if (this.readyState == 4) {
 				var result = JSON.parse(this.responseText);
 				console.log(result);
@@ -58,12 +36,12 @@ function submit(req,res){
 			}
 		}
 
-    xhr.open('POST', baseURL);
-    xhr.setRequestHeader("Content-Type", "application/json");
-    xhr.send(JSON.stringify({
-    	name: couponName,
-    	code: "004CCC"+couponCode,
-    	campaign_id:1818934906795395
-    }));
+	    xhr.open('POST', baseURL);
+	    xhr.setRequestHeader("Content-Type", "application/json");
+	    xhr.send(JSON.stringify({
+	    	name: couponName,
+	    	code: "004CCC"+couponCode,
+	    	campaign_id:1818934906795395
+	    }));
 	}	
 }
