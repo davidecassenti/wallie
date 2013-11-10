@@ -7,18 +7,21 @@ var settings = {
 };
 
 function loginClick(e) {
-	/*Cloud.Users.login({
-		login : $.usernameTxt.value,
-		password : $.passwordTxt.value
-	}, function(e) {
-		if(e.success == 1){
-			settings.loginCallback();
-		} else {
-			$.msgLbl.text = e.message;
+	var xhr = Ti.Network.createHTTPClient({
+		onload: function(e) {
+			if (200 === this.status) {
+				settings.loginCallback();
+			} else {
+				var response = JSON.parse(this.responseText);
+				$.msgLbl.text = response.message;
+			}
 		}
-		
-	});*/
-	settings.loginCallback();
+	});
+	xhr.open('POST', 'http://wallie.wechanged.it/login');
+	xhr.send({
+		user: $.usernameTxt.value,
+		pass: $.passwordTxt.value
+	});
 }
 
 

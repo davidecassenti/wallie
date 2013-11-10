@@ -19,7 +19,9 @@
 "#companyLogo":{
 	left: 10,
 	top: 5,
-	bottom: 5
+	bottom: 5,
+	width: 40,
+	height: 40
 },
 "#companyTitle":{
 	left: 0,
