@@ -8,9 +8,11 @@
     { "path": "/logout", "callback": "user#logout" },
 
     { "path": "/coupons", "callback": "coupons#list" },
+    { "path": "/coupon/share", "callback": "coupons#share", "method": "post" },
+    { "path": "/coupon/add", "callback": "coupons#add", "": "post" },
 
     { "path": "/retailer", "callback": "retailer#index" },
-    { "path": "/submit", "callback": "retailer#submit", "method": "post" }
+    { "path": "/retailer/submitCoupon", "callback": "retailer#submit", "method": "post" }
   ],
   "filters":
   [
@@ -21,11 +23,14 @@
   	{ "event": "", "callback": ""}
   ],
     "acs": {
-      "key": "",
-      "secret": ""
+      "key": "AYQucZimqgv8Q9HorPsq22f3kLFwZ0xO",
+      "secret": "ofIFMTS1F2zHL5XzNg00OH7JJ6noy8dQ"
   },
     "stickystreet": {
-      "user_id": "",
-      "user_password": ""
+      "account_id": "wechangedit",
+      "user_id": "wechangedit",
+      "user_password": "7c4a8d09ca3762af61e59520943dc26494f8941b",
+      "base_url": "https://api.clienttoolbox.com/?output=json&",
+      "default_campaigns": ""
   }
 }
