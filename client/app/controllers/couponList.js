@@ -23,7 +23,7 @@ var xhr = Ti.Network.createHTTPClient({
 
 		for (var c = 0; c < coupons.length; c++) {
 			var coupon = coupons[c];
-			
+
 			var item = {
 				properties : {
 					accessoryType : Ti.UI.LIST_ACCESSORY_TYPE_DISCLOSURE,
@@ -34,6 +34,9 @@ var xhr = Ti.Network.createHTTPClient({
 				},
 				es_info : {
 					text : coupon.name
+				},
+				code_info : {
+					text : coupon.coupon_id
 				},
 				pic : {
 					image : coupon.retailer.photo || 'http://lorempixel.com/60/60?r=' + Math.random()

@@ -17,7 +17,7 @@
 	font: {fontSize: 16}
 },
 "#couponHeader": {
-	layout: "horizontal",
+	layout: "absolute",
 	height: 70
 },
 "#companyLogo": {
@@ -29,10 +29,17 @@
 "#couponTitle": {
 	color: "#594a43",
 	font: {fontSize: 18},
-	left: 5
+	left: 70,
+	width: 200
 },
 "#mapButton": {
 	top: 10,
+	backgroundColor: "#60b693",
+	color: "#fff"
+},
+"#shareButton": {
+	top: 10,
+	right: 10,
 	backgroundColor: "#60b693",
 	color: "#fff"
 }

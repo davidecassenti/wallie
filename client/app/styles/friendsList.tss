@@ -29,16 +29,10 @@
 	color: "#60b693",
 	font: {fontSize: 10}
 },
-"#couponCode": {
-	color: "white",
-	font: {
-		fontSize: 1
-	}
-},
 "#subtitle": {
 	left: 0,
 	color: "#594a43",
-	font: {fontSize: 12}
+	font: {fontSize: 18}
 },
 "#textContainer": {
 	layout: "vertical",

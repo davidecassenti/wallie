@@ -17,6 +17,7 @@
 						<View id="textContainer">
 							<Label bindId="info" id="companyTitle" />
 							<Label bindId="es_info" id="subtitle" />
+							<Label bindId="code_info" id="couponCode" />
 						</View>
 					</ItemTemplate>
 				</Templates>

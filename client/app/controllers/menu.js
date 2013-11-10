@@ -10,7 +10,7 @@ for (var i = 0; i < 5; i++) {
 		case 1: title = "Promotions"; image="images/icons/plus-icon.png"; break;
 		case 2: title = "Marketplace"; image="images/icons/cart-icon.png"; break;
 		case 3: title = "Friends"; image="images/icons/share-icon.png"; break;
-		case 4: title = "Settings"; image="images/icons/settings-icon.png"; break;
+		case 4: title = "Logout"; image="images/icons/settings-icon.png"; break;
 	}
 	var item = {
 		properties: {backgroundSelectedColor: "#60b693",
@@ -37,8 +37,8 @@ $.vouchersList.addEventListener('itemclick', function(e){
 		case 0: control = 'couponList'; title="My Wallie"; break;
 		case 1: control = 'couponList'; title="Promotions"; break;
 		case 2: control = 'couponList'; title="Marketplace"; break;
-		case 3: control = 'couponList'; title="Friends"; break;
-		case 4: control = 'couponList'; title="Settings"; break;
+		case 3: control = 'friendsList'; title="Friends"; break;
+		case 4: control = 'login'; title="Logout"; break;
 	}
 	
 	var controller = Alloy.createController(control, {title: title});

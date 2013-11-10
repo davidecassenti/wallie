@@ -14,24 +14,6 @@
             </Templates>
 
             <ListSection headerTitle="vouchersList">
-                <!-- You can specify any ListItem or ListDataItem properties in ListItem -->
-                <!-- Specify data to bind to the item template with inline attributes
-                     defined as <bindId>:<Ti.UI.Component.property> -->
-                <ListItem info:text="Harris + Hoole" es_info:text="Free Flat White on us!" whitepic:image="/images/hh-logo.png" />
-                <ListItem info:text="Harris + Hoole" es_info:text="Play your favourite song in the store while you sip your coffee" pic:image="/images/hh-logo.png" />
-                <ListItem info:text="Harris + Hoole" es_info:text="Come behind the bar and craft your own coffee" pic:image="/images/hh-logo.png" />
-                <ListItem info:text="Harris + Hoole" es_info:text="Free bag of our special Xmas blend" pic:image="/images/hh-logo.png" />
-                <ListItem info:text="Harris + Hoole" es_info:text="Free bag of coffee compost" pic:image="/images/hh-logo.png" />
-                <ListItem info:text="M&amp;S" es_info:text="50% off our Festive Mixed Wine Cases" pic:image="/images/ms-logo.png" />
-                <ListItem info:text="M&amp;S" es_info:text="Free Special Sandwich of the day at the Deli" pic:image="/images/ms-logo.png" />
-                <ListItem info:text="M&amp;S" es_info:text="50% off Personal Shopper" pic:image="/images/ms-logo.png" />
-                <ListItem info:text="M&amp;S" es_info:text="Free Enlightened Penguin" pic:image="/images/ms-logo.png" />
-                <ListItem info:text="M&amp;S" es_info:text="Free Enlightened Fox" pic:image="/images/ms-logo.png" />
-                <ListItem info:text="B&amp;Q" es_info:text="2 for 1 on Dry Pine Cones" pic:image="/images/bq-logo.png" />
-                <ListItem info:text="B&amp;Q" es_info:text="Swap 1 Dry Pine Cone for a Moist one" pic:image="/images/bq-logo.png" />
-                <ListItem info:text="B&amp;Q" es_info:text="Free Love Tool Box" pic:image="/images/bq-logo.png" />
-                <ListItem info:text="B&amp;Q" es_info:text="30% Rat traps" pic:image="/images/bq-logo.png" />
-                <ListItem info:text="B&amp;Q" es_info:text="6 months free subscription to Squirting" pic:image="/images/bq-logo.png" />
             </ListSection>
         </ListView>
 	</View>	
