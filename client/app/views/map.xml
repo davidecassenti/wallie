@@ -1,0 +1,18 @@
+<Alloy><Window id="win">
+
+        <!-- Note the ns attribute is used to change the default namespace. -->
+        <View id="mapview" ns="Ti.Map" onComplete="setRegion"
+            animate="true" regionFit="true" userLocation="true"
+            mapType="Ti.Map.STANDARD_TYPE" >
+
+            <Annotation id="mountainView"
+              latitude="51.5787053" longitude="-0.1240043"
+              title="Harris + Hole" subtitle="Crouch End"
+              pincolor="Titanium.Map.ANNOTATION_GREEN"
+              myid="1"/>
+
+            <!-- Place other child views here, such as an ImageView to add an overlay. -->
+
+        </View>
+    </Window>
+    </Alloy>

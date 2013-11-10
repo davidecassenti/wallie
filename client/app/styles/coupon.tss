@@ -30,4 +30,9 @@
 	color: "#594a43",
 	font: {fontSize: 18},
 	left: 5
+},
+"#mapButton": {
+	top: 10,
+	backgroundColor: "#60b693",
+	color: "#fff"
 }
