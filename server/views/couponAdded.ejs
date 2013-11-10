@@ -40,22 +40,13 @@
 	<div class="container">
 		<div class="row">
 			<h1>Logged in as <strong>Birdback</strong></h1>
-			<form class="col-md-6" method="post" action="/retailer/submitCoupon">
-				<fieldset>
-					<legend>
-						Add a coupon
-					</legend>
-					  <div class="form-group">
-					    <label for="couponName">Coupon Text</label>
-					    <input type="text" class="form-control" id="couponName" name="couponName" placeholder="Enter coupon text" maxlength="200">
-					  </div>
-					  <div class="form-group">
-					    <label for="couponCode">Coupon Code: 004CCC - </label>
-					    <input type="text" class="form-control" id="couponCode" name="couponCode" placeholder="Coupon Code" maxlength="4">
-					  </div>
-					  <button name="addCoupon" type="submit" class="btn btn-success">Submit</button>
-				 </fieldset>
-			</form>
+			<h2>Coupon added:</h2>
+			<dl>
+				<dt>Coupon Name:</dt>
+				<dd><%= couponName %></dd>
+				<dt>Coupon Code:</dt>
+				<dd><%= couponCode %></dd>
+			</dl>
 		</div>
 	</div>
   </body>

@@ -1,16 +1,37 @@
+var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+
 function index(req, res) {
-	res.render('retailer', { title: 'Welcome to Node.ACS!' });
+	res.render('retailer', { title: 'Retailer Space' });
+}
+
+function viewCoupons(req,res){
+	//make the call to get all coupons
+	var baseURL = "http://wallie.wechanged.it/coupons";
+		
+	var xhr = new XMLHttpRequest();
+	xhr.onreadystatechange = function() {
+		console.log(this.responseText);
+		if (this.readyState == 4) {
+			var result = JSON.parse(this.responseText);
+			console.log(result);
+			
+			res.render('coupons', { 
+				couponName: couponName,
+				couponCode: couponCode,
+				title: 'Adding your Coupon...'
+			});
+			res.end();
+		}
+	}
 }
 
 function submit(req,res){
-	body = req.body;
+	var body = req.body;
 
-	couponName = 	body.couponName;
-	couponCode = 	body.couponCode;
-	campaignId = 	1818934906795395;
-	retailerLogo = 	body.retailerLogo;
+	var couponName = body.couponName;
+	var couponCode = body.couponCode;
 		
-	if (!couponName || !couponCode || !campaignId) {
+	if (!couponName || !couponCode) {
 			res.writeHead(400, {
 				"Content-Type": "application/json"
 			});
@@ -18,11 +39,31 @@ function submit(req,res){
 				"message": "Oops! Missing Coupon Name, Coupon Code or Campaign Name"
 			}));
 	}else{
-		res.end(JSON.stringify({
-			"message": couponName+" "+couponCode+ " "+campaignId
-		}));
-	}
-
-	res.end;
+		//make the call
+		var baseURL = "http://wallie.wechanged.it/coupon/add";
 		
+		var xhr = new XMLHttpRequest();
+		xhr.onreadystatechange = function() {
+			console.log(this.responseText);
+			if (this.readyState == 4) {
+				var result = JSON.parse(this.responseText);
+				console.log(result);
+				
+				res.render('couponAdded', { 
+					couponName: couponName,
+					couponCode: couponCode,
+					title: 'Adding your Coupon...'
+				});
+				res.end();
+			}
+		}
+
+    xhr.open('POST', baseURL);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.send(JSON.stringify({
+    	name: couponName,
+    	code: "004CCC"+couponCode,
+    	campaign_id:1818934906795395
+    }));
+	}	
 }
