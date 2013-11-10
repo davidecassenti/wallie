@@ -1,4 +1,3 @@
 "#login":{
-	zIndex: 10,
-	modal: true
+	backgroundColor: "#594a43"
 }

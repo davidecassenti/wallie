@@ -1,4 +1,10 @@
-
-".container" : {
-  
+"Window": {
+	backgroundColor: "#594a43"
+	//statusBarStyle: Titanium.UI.iPhone.StatusBar.OPAQUE_BLACK
+},
+"#menu": {
+	backgroundColor: "#9bbeaa",
+	width: 170,
+	height: Ti.UI.FILL,
+	left: 0
 }

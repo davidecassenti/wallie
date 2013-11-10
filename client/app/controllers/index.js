@@ -1,13 +1,16 @@
-var nav = require('navigation');
-nav.win = $.main;
-
-var initLogin = function(){
+/*
+var initLogin = function() {
 	var login = Alloy.createController('login', {}).getView();
 	login.open();
 };
 
+if (Alloy.Globals.loggedIn == true) {
+	$.main.open();
+} else {
+	initLogin();
+}*/
 
-initLogin();
+//$.login.open();
 
-
-$.main.open();
+//var menu = Alloy.createController('menu', {}).getView();
+var login = Alloy.createController('login', {}).getView();

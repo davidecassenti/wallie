@@ -1,4 +1,5 @@
 <Alloy>
-	<View id="menu">
-	</View>
+	<Window id="base">
+		<View id="menu"></View>
+	</Window>
 </Alloy>

@@ -1,5 +1,4 @@
 <Alloy>
-	<NavigationWindow id="main">
-			<Require type="view" src="couponsList"/>
-	</NavigationWindow>
+	<!--<Require type="view" src="login" id="login"/>-->
+	<Require type="view" src="menu"/>
 </Alloy>

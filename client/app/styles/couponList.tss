@@ -1,0 +1,42 @@
+"NavigationWindow":{
+	tintColor: "#dfe0bf",
+	navTintColor: "#dfe0bf",
+	width: Ti.Platform.displayCaps.platformWidth
+},
+"Window" : {
+  height: Ti.UI.FILL,
+  width: Ti.Platform.displayCaps.platformWidth,
+  backgroundColor: "#fff",
+  layout: "vertical",
+  title: "Coupons",
+  barColor: "#60b693",
+  statusBarStyle: Titanium.UI.iPhone.StatusBar.LIGHT_CONTENT
+},
+"ListView": {
+	backgroundColor: "#fff",
+	width: Ti.Platform.displayCaps.platformWidth
+},
+"#companyLogo":{
+	left: 10,
+	top: 5,
+	bottom: 5
+},
+"#companyTitle":{
+	left: 0,
+	top: 10,
+	color: "#60b693",
+	font: {fontSize: 10}
+},
+"#subtitle": {
+	left: 0,
+	color: "#594a43",
+	font: {fontSize: 14}
+},
+"#textContainer": {
+	layout: "vertical",
+	left: 70
+},
+"#offers": {
+	width: Ti.UI.FILL,
+	height: 100
+}
