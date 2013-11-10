@@ -38,7 +38,7 @@
 ".acsLoginBtn": {
 	bottom: 10,
 	color: "#fff",
-	backgroundColor: "#ba3b56",
+	backgroundColor: "#60b693",
 	borderRadius: 5,
 	font: {fontSize: "14dp", fontWeight: "bold"},
 	backgroundImage: "/images/com.appcelerator.acslogin/button5.png",
@@ -50,14 +50,14 @@
 },
 ".acsloginLbl": {
 	bottom: 10,
-	color: "#fff",
+	color: "#60b693",
 	font: {fontSize: "12dp"},
 	shadowOffset: 1,
 	shadowColor: "#363636"
 },
 ".acsloginMsg": {
 	bottom: 10,
-	color: "#fff",
+	color: "#60b693",
 	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
 	font: {fontSize: "14dp"},
 	shadowOffset: 1,

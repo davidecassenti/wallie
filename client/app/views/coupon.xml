@@ -1,10 +1,8 @@
 <Alloy>
-	<view>
-		<ImageView id="companyLogo" image="/images/logos/hh-logo.png" />
+	<Window>
+	<ScrollView>
+		<Label id="companyTitle" />
 		<Label id="couponTitle" text="Come behind the bar and craft your own coffee" />
-		<Button id="shareButton" onClick="doClick" title="Send to a friend"
-            top="10" width="100" height="50" />
-		<ImageView id="couponImage" image="/images/coupon.png" />
 		<Label id="couponCode" text="34574389" />
 		<ImageView id="barcode" image="http://chart.apis.google.com/chart?cht=qr&chs=100x100&chld=H|0&chl=34574389" />
 		<Label id="couponDesc">
@@ -12,11 +10,14 @@
 		</Label>
 		<Label id="addressTitle" text="Address" />
 		<Label id="address">
-			9 The Broadway,<br /> 
-			Crouch End<br />
+			9 The Broadway,
+			Crouch End
 			N8 8DU
 		</Label>
-		<Button id="mapButton" onClick="doClick" title="Map"
+		<Button id="mapButton" backgroundColor="pink" title="Map"
             width="100" height="50" />
-	</view>
+            <Button id="shareButton"  title="Send to a friend"
+            top="10" width="100" height="50" />
+            </ScrollView>
+	</Window>
 </Alloy>

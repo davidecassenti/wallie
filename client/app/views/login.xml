@@ -1,0 +1,5 @@
+<Alloy>
+	<Window class="container" title="Sign In" id="login">
+		<Require type="widget" src="com.appcelerator.acslogin" id="acslogin"/>
+	</Window>
+</Alloy>

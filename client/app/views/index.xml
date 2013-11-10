@@ -1,4 +1,4 @@
 <Alloy>
-	<Window class="container">
-	</Window>
+	<!--<Require type="view" src="login" id="login"/>-->
+	<Require type="view" src="menu"/>
 </Alloy>

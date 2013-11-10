@@ -1,0 +1,22 @@
+"Window" : {
+  height: Ti.UI.FILL,
+  width: Ti.UI.FILL,
+  backgroundColor: "#fff",
+  layout: "vertical",
+  title: "Details",
+  barColor: "#60b693",
+  statusBarStyle: Titanium.UI.iPhone.StatusBar.LIGHT_CONTENT
+},
+"ScrollView": {
+	layout: "vertical",
+	height: Ti.UI.FILL,
+	width: Ti.UI.FILL
+},
+"#companyTitle":{
+	color: "#60b693",
+	font: {fontSize: 16}
+},
+"#couponTitle": {
+	color: "#594a43",
+	font: {fontSize: 18}
+}

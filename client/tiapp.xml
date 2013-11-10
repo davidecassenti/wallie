@@ -6,7 +6,7 @@
     <property name="acs-oauth-secret-development" type="string">ofIFMTS1F2zHL5XzNg00OH7JJ6noy8dQ</property>
     <property name="acs-oauth-key-development" type="string">AYQucZimqgv8Q9HorPsq22f3kLFwZ0xO</property>
     <property name="acs-api-key-development" type="string">OvnYxm0DUPK0FhpQA9Ygs1XvJX6Iecr7</property>
-    <id>it.wechanged.wallie.app</id>
+    <id>com.appcelerator.test.app</id>
     <name>wallie</name>
     <version>1.0</version>
     <publisher>WeChangedIt</publisher>

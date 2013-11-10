@@ -10,3 +10,6 @@
 //
 // Alloy.Globals.someGlobalFunction = function(){};
 
+Alloy.Globals.loggedIn = false;
+Alloy.Globals.nav = null;
+Alloy.Globals.menu = false;
