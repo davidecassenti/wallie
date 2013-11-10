@@ -1,5 +1,6 @@
 "Window": {
-	backgroundColor: "#594a43"
+	backgroundColor: "#594a43",
+	tintColor: "#dfe0bf"
 	//statusBarStyle: Titanium.UI.iPhone.StatusBar.OPAQUE_BLACK
 },
 "#menu": {
@@ -7,4 +8,38 @@
 	width: 170,
 	height: Ti.UI.FILL,
 	left: 0
+},
+// "ListView": {
+	// top: 70,
+	// backgroundColor: "#9bbeaa"
+// },
+// "#menuIcon": {
+	// height: 30,
+	// width: 30,
+	// left: 10
+// },
+// "#menuTitle":{
+	// left: 60,
+	// color: "#fff",
+	// font: {fontSize: 10}
+// }
+
+
+
+"ListView": {
+	backgroundColor: "transparent",
+	width: Ti.UI.FILL, 
+	top:70
+},
+"#companyLogo":{
+	left: 5,
+	top: 10,
+	bottom: 10
+},
+"#companyTitle":{
+	left: 60,
+	top: 17,
+	width: 120,
+	color: "#fff",
+	font: {fontSize: 12}
 }

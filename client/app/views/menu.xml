@@ -1,5 +1,32 @@
 <Alloy>
 	<Window id="base">
-		<View id="menu"></View>
+		<View id="menu">
+			<!--<ListView id="menuItems" defaultItemTemplate="template">
+
+				
+				<Templates>
+					<ItemTemplate name="template" id="menuItem">
+						<ImageView bindId="menuIcon" id="menuIcon" />
+						<Label bindId="menuTitle" id="menuTitle" />
+					</ItemTemplate>
+				</Templates>
+				<ListSection id="menuSection"/>
+		</ListView>-->
+		<ListView id="vouchersList" defaultItemTemplate="template">
+
+				<!-- The Templates tag sets the ListView's templates property -->
+				<Templates>
+					<!-- Define your item templates within the Templates tags or use the
+					Require tag to include a view that only contains an ItemTemplate -->
+					<ItemTemplate name="template">
+						<ImageView bindId="pic" id="companyLogo" />
+						
+							<Label bindId="info" id="companyTitle" />						
+					</ItemTemplate>
+				</Templates>
+				<ListSection id="vouchersListSection"/>
+
+			</ListView>
+		</View>
 	</Window>
 </Alloy>
