@@ -60,7 +60,7 @@ function createCampaign (req, res, user, pass) {
 }
 
 function createUser(req, res, user, pass, campaign_id) {
-	StickyStreet.call(req, res, {
+	call(req, res, {
 		type: "record_customer",
 		customer_action: "new",
 		card_number_generate: 16,	

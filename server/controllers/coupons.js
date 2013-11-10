@@ -10,7 +10,7 @@ function list(req, res) {
 				"Content-Type": "application/json"
 			});
 			res.end(JSON.stringify({
-				"coupons": coupons
+				"coupons": coupons.reverse()
 			}));
 		} else {
 			res.writeHead(400, {
@@ -32,16 +32,21 @@ function share(req, res) {
 		__list(req, res, function(req, res, coupons) {
 			if (null !== coupons) {
 				for (var cc in coupons) {
-					if (coupons[cc].item_id == coupon_id) {
+					if (coupons[cc].coupon_id == coupon_id) {
 						var item = coupons[cc];
+
+						var newItem = {
+							name: item.name,
+							reward_id: item.code
+						};
 
 						StickyStreet.call(req, res, {
 							type: "campaign_delete",
 							action: "item",
 							campaign_id: item.campaign_id,
-							item_id: item.item_id
+							item_id: item.coupon_id
 						}, function(req, res, result) {
-							__add(req, res, campaign_id, item, function(req, res, result) {
+							__add(req, res, campaign_id, newItem, function(req, res, result) {
 								res.writeHead(200, {
 									"Content-Type": "application/json"
 								});
@@ -129,6 +134,7 @@ function add(req, res) {
 }
 
 function __add(req, res, campaign_id, item, callback) {
+	console.log(item);
 	StickyStreet.call(req, res, {
 		type: "campaign_new",
 		action: "item",
