@@ -1,6 +1,9 @@
 .DS_Store
+<<<<<<< HEAD
 .gitignore
 Resources
 Resources/*
 build/*
 app_
+=======
+>>>>>>> cbe282017baa78218332de4331d7dcb38377968d
