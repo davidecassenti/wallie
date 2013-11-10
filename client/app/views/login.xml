@@ -1,5 +1,6 @@
 <Alloy>
-	<Window class="container" title="Sign In" id="login">
+	<Window class="container" title="Sign In" id="login" layout="vertical">
+		<ImageView width=250 top=70 image="images/logo.png"></ImageView>
 		<Require type="widget" src="com.appcelerator.acslogin" id="acslogin"/>
 	</Window>
 </Alloy>
