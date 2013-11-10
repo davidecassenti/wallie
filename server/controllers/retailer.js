@@ -4,8 +4,25 @@ function index(req, res) {
 	res.render('retailer', { title: 'Retailer Space' });
 }
 
-function viewAll(req,res){
-
+function viewCoupons(req,res){
+	//make the call to get all coupons
+	var baseURL = "http://wallie.wechanged.it/coupons";
+		
+	var xhr = new XMLHttpRequest();
+	xhr.onreadystatechange = function() {
+		console.log(this.responseText);
+		if (this.readyState == 4) {
+			var result = JSON.parse(this.responseText);
+			console.log(result);
+			
+			res.render('coupons', { 
+				couponName: couponName,
+				couponCode: couponCode,
+				title: 'Adding your Coupon...'
+			});
+			res.end();
+		}
+	}
 }
 
 function submit(req,res){
