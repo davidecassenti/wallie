@@ -22,7 +22,8 @@ var xhr = Ti.Network.createHTTPClient({
 			
 			var item = {
 				properties : {
-					accessoryType : Ti.UI.LIST_ACCESSORY_TYPE_DISCLOSURE
+					accessoryType : Ti.UI.LIST_ACCESSORY_TYPE_DISCLOSURE,
+					height: 80
 				},
 				info : {
 					text : coupon.retailer.name || ''

@@ -16,7 +16,18 @@
 	color: "#60b693",
 	font: {fontSize: 16}
 },
+"#couponHeader": {
+	layout: "horizontal",
+	height: 70
+},
+"#companyLogo": {
+	width: 60,
+	height: 60,
+	left: 5,
+	top: 5
+},
 "#couponTitle": {
 	color: "#594a43",
-	font: {fontSize: 18}
+	font: {fontSize: 18},
+	left: 5
 }

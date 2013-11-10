@@ -20,8 +20,8 @@
 	left: 10,
 	top: 5,
 	bottom: 5,
-	width: 40,
-	height: 40
+	width: 75,
+	height: 75
 },
 "#companyTitle":{
 	left: 0,
@@ -36,7 +36,7 @@
 },
 "#textContainer": {
 	layout: "vertical",
-	left: 70
+	left: 90
 },
 "#offers": {
 	width: Ti.UI.FILL,

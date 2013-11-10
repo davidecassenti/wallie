@@ -2,11 +2,13 @@
 	<Window>
 	<ScrollView>
 		<Label id="companyTitle" />
-		<Label id="couponTitle" text="Come behind the bar and craft your own coffee" />
+		<View id="couponHeader">
+			<ImageView id="companyLogo"></ImageView>>
+			<Label id="couponTitle" text="Come behind the bar and craft your own coffee" />
+		</View>
 		<Label id="couponCode" text="34574389" />
-		<ImageView id="barcode" image="http://chart.apis.google.com/chart?cht=qr&chs=100x100&chld=H|0&chl=34574389" />
+		<ImageView id="barcode" image="http://chart.apis.google.com/chart?cht=qr&chs=240x240&chld=H|0&chl=34574389" />
 		<Label id="couponDesc">
-			Ever wanted to jump behind the bar and craft your own coffee? Creamy, Iced, Frothy... Come to Harris + Hoole and we'll let you. We will give you a quick tour of the coffee machine we use and will teach you how to create your favourite beverage.
 		</Label>
 		<Label id="addressTitle" text="Address" />
 		<Label id="address">
