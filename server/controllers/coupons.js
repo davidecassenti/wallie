@@ -114,6 +114,7 @@ function __list(req, res, callback) {
 }
 
 function add(req, res) {
+	console.log(req);
 	var item = {
 		name: req.body.name,
 		reward_id: req.body.code

@@ -1,5 +1,6 @@
 body {
   /*font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;*/
+  padding-bottom:2em;
 }
 
 .navbar-default .navbar-brand{
@@ -13,8 +14,9 @@ body {
 }
 .navbar-nav{
 	position:absolute;
-	bottom:0.5em; 
+	top:1em; 
 	right:1em;
+	padding-right:120px;
 }
 .navbar .container{
 	position:relative;
@@ -38,4 +40,13 @@ h1{
 
 form.col-md-6{
 	padding:0;
+}
+.navbar-nav>li.logo {
+	position:absolute;
+	top:0;
+	right:0;
+}
+.navbar-nav>li.logo img{
+	border:1px solid #bfe0c7;
+	box-shadow:2px 2px 2px 2px #000;
 }

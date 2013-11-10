@@ -9,7 +9,7 @@
 
     { "path": "/coupons", "callback": "coupons#list" },
     { "path": "/coupon/share", "callback": "coupons#share", "method": "post" },
-    { "path": "/coupon/add", "callback": "coupons#add", "": "post" },
+    { "path": "/coupon/add", "callback": "coupons#add", "method": "post" },
 
     { "path": "/retailer", "callback": "retailer#index" },
     { "path": "/retailer/submitCoupon", "callback": "retailer#submit", "method": "post" }

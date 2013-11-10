@@ -29,8 +29,9 @@
 		  <!-- Collect the nav links, forms, and other content for toggling -->
 		  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		    <ul class="nav navbar-nav navbar-right">
-		      <li><a href="#">Add coupon</a></li>
+		      <li><a href="/retailer" class="active">Add coupon</a></li>
 		      <li><a href="#">View all coupons</a></li>
+		      <li class="logo"><a href="#"><img src="/images/birdback-logo.png" width="60" height="60"></a></li>
 		    </ul>
 		  </div><!-- /.navbar-collapse -->
 	  </div>
@@ -38,23 +39,19 @@
 	<div class="container">
 		<div class="row">
 			<h1>Logged in as <strong>Birdback</strong></h1>
-			<form class="col-md-6" method="post">
+			<form class="col-md-6" method="post" action="/retailer/submitCoupon">
 				<fieldset>
 					<legend>
 						Add a coupon
 					</legend>
 					  <div class="form-group">
-					    <label for="couponName"col-sm-2 control-label>Coupon Text</label>
-					    <input type="text" class="form-control col-sm-4" id="couponName" name="couponName" placeholder="Enter coupon text" maxlength="200">
+					    <label for="couponName">Coupon Text</label>
+					    <input type="text" class="form-control" id="couponName" name="couponName" placeholder="Enter coupon text" maxlength="200">
 					  </div>
-					  <div class="form-group"col-sm-2 control-label>
+					  <div class="form-group">
 					    <label for="couponCode">Coupon Code: 004CCC - </label>
-					    <input type="text" class="form-control col-sm-4" id="couponCode" name="couponCode" placeholder="Coupon Code" maxlength="10">
+					    <input type="text" class="form-control" id="couponCode" name="couponCode" placeholder="Coupon Code" maxlength="4">
 					  </div>
-					<div class="form-group">
-						<label for="retailerLogo"col-sm-2 control-label>Retailer Logo</label>
-						<input type="file" class=" col-sm-4" id="retailerLogo" name="retailerLogo">
-					</div>
 					  <button name="addCoupon" type="submit" class="btn btn-success">Submit</button>
 				 </fieldset>
 			</form>
